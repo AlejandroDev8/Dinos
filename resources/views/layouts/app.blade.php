@@ -4,12 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> DAW @yield('title')</title>
+  <title> DAW - @yield('title')</title>
   @vite('resources/css/app.css')
 </head>
 
-<body>
-  <h1 class="text-4xl font-bold">@yield('title')</h1>
+<body class="bg-gray-100">
+  <header class="p-5 border-b bg-white shadow">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-black">Proyecto-DAW</h1>
+      <nav class="flex gap-3 items-center">
+        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="#">Login</a>
+        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="#">SignUp</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto mt-10">
+    <h2 class="font-black text-center text-3xl mt-10">
+      @yield('title')
+    </h2>
+    @yield('content')
+  </main>
+  <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+    Proyecto DAW ISC J2 {{ date('Y') }}
+  </footer>
 </body>
 
 </html>
