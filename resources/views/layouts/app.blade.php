@@ -15,7 +15,8 @@
       <h1 class="text-3xl font-black">Proyecto-DAW</h1>
       <nav class="flex gap-3 items-center">
         <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="#">Login</a>
-        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="/signup">SignUp</a>
+        {{-- Con el "route" traemos el nombre de la ruta nombrada --}}
+        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('signup')}}">SignUp</a>
       </nav>
     </div>
   </header>

@@ -10,10 +10,16 @@
       <img src="{{asset('img/signup.jpg')}}" alt="signup" loading='lazy'>
     </div>
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl mt-2">
-      <form>
+      <form action="{{route('signup')}}" method="POST">
+        @csrf
         <div class="mb-6">
           <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
-          <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" class="border p-3 w-full rounded-lg">
+          <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" class="border p-3 w-full rounded-lg @error('name')
+            border-red-500
+            @enderror" value="{{old('name')}}">
+          @error('name')
+            <span class="text-red-500 text-xs">{{str_replace('name', 'nombre', $message)}}</span>
+          @enderror
         </div>
         <div class="mb-5">
           <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
