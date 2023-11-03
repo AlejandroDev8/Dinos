@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> DAW - @yield('title')</title>
+  <link rel="shortcut icon" href="{{asset('img/icon.svg')}}" type="image/x-icon">
   @vite('resources/css/app.css')
 </head>
 
@@ -24,7 +25,7 @@
     </h2>
     @yield('content')
   </main>
-  <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+  <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
     Proyecto DAW ISC J2 {{ date('Y') }}
   </footer>
 </body>
