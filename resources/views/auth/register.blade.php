@@ -18,7 +18,7 @@
             border-red-500
             @enderror" value="{{old('name')}}">
           @error('name')
-            <span class="text-red-500 text-xs">{{str_replace('name', 'nombre', $message)}}</span>
+            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{str_replace('name', 'nombre', $message)}}</p>
           @enderror
         </div>
         <div class="mb-5">
@@ -43,7 +43,7 @@
           <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
           <input type="password" name="password" id="password" placeholder="Ingresa tu password" class="border p-3 w-full rounded-lg @error('password')
           border-red-500
-          @enderror" value="{{old('password')}}">
+          @enderror">
           @error('password')
             <span class="text-red-500 text-xs">{{str_replace('password', 'password', $message)}}</span>
           @enderror
