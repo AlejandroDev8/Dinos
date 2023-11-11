@@ -19,6 +19,12 @@ class RegisterController extends Controller
   // Método para registrar un usuario
   public function store(Request $request)
   {
+
+    // Modificar el Request
+    $request->request->add([
+      'username' => Str::slug($request->username)
+    ]);
+
     // Validamos los datos
 
     $this->validate($request, [
@@ -32,7 +38,7 @@ class RegisterController extends Controller
 
     User::create([ //El "create", es el equivalente a "insert into" de SQL
       'name' => $request->name,
-      'username' => Str::lower($request->username),
+      'username' => $request->username,
       'email' => $request->email,
       'password' => Hash::make($request->password)
     ]);
