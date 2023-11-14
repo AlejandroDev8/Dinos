@@ -12,6 +12,9 @@
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl mt-2">
       <form method="POST" action="{{route('login')}}" novalidate>
         @csrf
+        @if (session('status'))
+        <span class="text-red-500 text-xs">{{session('status')}}</span>
+        @endif
         <div class="mb-5">
           <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
           <input type="email" name="email" id="email" placeholder="Ingresa tu email" class="border p-3 w-full rounded-lg @error('email')
