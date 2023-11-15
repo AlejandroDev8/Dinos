@@ -33,6 +33,9 @@
             <span class="text-red-500 text-xs">{{str_replace('password', 'password', $message)}}</span>
           @enderror
         </div>
+        <div class="mb-5">
+          <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-gray-500 text-sm">Mantener mi Sesión Iniciada</label>
+        </div>
         <input type="submit" value="iniciar sesion" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
       </form>
     </div>
