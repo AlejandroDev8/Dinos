@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  Inicia Sesión
+  Inicia Sesión en Dinos
 @endsection
 
 @section('content')

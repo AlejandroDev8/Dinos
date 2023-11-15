@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  Registrate
+  Registrate en Dinos
 @endsection
 
 @section('content')
