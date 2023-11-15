@@ -16,11 +16,11 @@
       {{-- Para saber que un usuario está autenticado --}}
       @auth
       <nav class="flex gap-3 items-center">
-        <a class="font-bold text-gray-500 text-lg hover:text-gray-900" href="{{route('login')}}">
+        <a class="font-bold text-gray-500 text-lg hover:text-gray-900" href="{{route('posts.index')}}">
           Hola <span class="font-normal">{{auth()->user()->username}}</span>
         </a>
         {{-- Con el "route" traemos el nombre de la ruta nombrada --}}
-        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('signup')}}">cerrar sesión</a>
+        <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('logout')}}">cerrar sesión</a>
       </nav>
       @endauth
       {{-- Para saber que un usuario no está autenticado --}}
