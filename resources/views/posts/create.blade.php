@@ -22,7 +22,7 @@
         </form>
     </div>
     <div class="md:w-1/2 bg-white p-10 rounded-lg shadow-xl mt-10 md:m-5">
-      <form action="{{route('signup')}}" method="POST">
+      <form action="{{route('posts.store')}}" method="POST">
         @csrf
         <div class="mb-6">
           <label
@@ -54,11 +54,11 @@
             name="descripcion"
             id="descripcion"
             placeholder="Descripción el titulo de la publicación"
-            class="border p-3 w-full rounded-lg @error('titulo')
+            class="border p-3 w-full rounded-lg @error('descripcion')
             border-red-500
             @enderror"
-          >{{old('titulo')}}</textarea>
-          @error('titulo')
+          >{{old('descripcion')}}</textarea>
+          @error('descripcion')
             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
           @enderror
         </div>
