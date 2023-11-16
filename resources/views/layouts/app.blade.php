@@ -17,7 +17,7 @@
       @auth
       <nav class="flex gap-3 items-center">
         <a
-          href="{{route('posts.create')}}"
+          href="{{route('posts.create', auth()->user()->username)}}"
           class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
