@@ -8,8 +8,10 @@ class ImagenController extends Controller
 {
   // Método para almacenar las imagenes
 
-  public function store()
+  public function store(Request $request)
   {
-    return 'Procesando imagen, desde iamgenController';
+    $imagen = $request->file('file');
+
+    return response()->json(['imagen' => $imagen->extension()]);
   }
 }

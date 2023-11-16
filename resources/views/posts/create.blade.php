@@ -18,7 +18,7 @@
           method="POST"
           enctype="multipart/form-data"
           >
-          
+          @csrf
         </form>
     </div>
     <div class="md:w-1/2 bg-white p-10 rounded-lg shadow-xl mt-10 md:m-5">
