@@ -48,7 +48,7 @@
             for="descripcion"
             class="mb-2 block uppercase text-gray-500 font-bold"
             >
-            Descrición
+            Descripción
           </label>
           <textarea
             name="descripcion"

@@ -16,21 +16,21 @@
         <span class="text-red-500 text-xs">{{session('status')}}</span>
         @endif
         <div class="mb-5">
-          <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
-          <input type="email" name="email" id="email" placeholder="Ingresa tu email" class="border p-3 w-full rounded-lg @error('email')
+          <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Correo electrónico</label>
+          <input type="email" name="email" id="email" placeholder="Ingresa tu correo electrónico" class="border p-3 w-full rounded-lg @error('email')
           border-red-500
           @enderror" value="{{old('email')}}">
           @error('email')
-            <span class="text-red-500 text-xs">{{str_replace('email', 'email', $message)}}</span>
+            <span class="text-red-500 text-xs">{{str_replace('email', 'correo electrónico', $message)}}</span>
           @enderror
         </div>
         <div class="mb-5">
-          <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
-          <input type="password" name="password" id="password" placeholder="Ingresa tu password" class="border p-3 w-full rounded-lg @error('password')
+          <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Contraseña</label>
+          <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" class="border p-3 w-full rounded-lg @error('password')
           border-red-500
           @enderror">
           @error('password')
-            <span class="text-red-500 text-xs">{{str_replace('password', 'password', $message)}}</span>
+            <span class="text-red-500 text-xs">{{str_replace('password', 'contraseña', $message)}}</span>
           @enderror
         </div>
         <div class="mb-5">
