@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $fillable = [
+    'titulo',
+    'descripcion',
+    'imagen',
+    'user_id'
+  ];
 }
