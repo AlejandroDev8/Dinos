@@ -11,12 +11,7 @@ const dropzone = new Dropzone('#dropzone', {
   uploadMultiple: false,
 })
 
-// file: es el dropzone file, xhr: es el objeto XMLHttpRequest, formData: es el objeto FormData
-
-dropzone.on('sending', function(file, xhr, formData) {
-  console.log(formData)
-})
-
-dropzone.on('success', function(file, xhr) {
-  console.log(xhr)
+dropzone.on('success', function(file, response) {
+  
+  document.querySelector('[name="imagen"]').value = response.imagen
 })
