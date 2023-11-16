@@ -14,5 +14,9 @@ const dropzone = new Dropzone('#dropzone', {
 // file: es el dropzone file, xhr: es el objeto XMLHttpRequest, formData: es el objeto FormData
 
 dropzone.on('sending', function(file, xhr, formData) {
-  console.log(file)
+  console.log(formData)
+})
+
+dropzone.on('success', function(file, xhr) {
+  console.log(xhr)
 })
