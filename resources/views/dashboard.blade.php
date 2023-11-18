@@ -39,7 +39,7 @@
         </div>
       @endforeach
     </div>
-    <div>
+    <div class="my-10 p-3">
       {{$posts->links()}}
     </div>
     @else
