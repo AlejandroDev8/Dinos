@@ -19,6 +19,7 @@
     </div>
     <div class="md:w-1/2 p-5">
       <div class="shadow bg-white p-5 mb-5">
+        @auth
         <p class="text-xl font-bold text-center mb-4">
           Agrega un comentario
         </p>
@@ -48,6 +49,7 @@
           class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
           >
         </form>
+        @endauth
       </div>
     </div>
   </div>  
