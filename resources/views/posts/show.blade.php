@@ -17,8 +17,38 @@
         <p class="mt-5">{{$post->descripcion}}</p>
       </div>
     </div>
-    <div class="md:w-1/2">
-      2
+    <div class="md:w-1/2 p-5">
+      <div class="shadow bg-white p-5 mb-5">
+        <p class="text-xl font-bold text-center mb-4">
+          Agrega un comentario
+        </p>
+        <form action="">
+          <div class="mb-6">
+            <label
+              for="comentario"
+              class="mb-2 block uppercase text-gray-500 font-bold"
+              >
+              Escribe tu comentario
+            </label>
+            <textarea
+              name="comentario"
+              id="comentario"
+              placeholder="Escribe tu comentario"
+              class="border p-3 w-full rounded-lg @error('comentario')
+              border-red-500
+              @enderror"
+            ></textarea>
+            @error('comentario')
+              <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+            @enderror
+          </div>
+          <input
+          type="submit"
+          value="comentar"
+          class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
+          >
+        </form>
+      </div>
     </div>
   </div>  
 @endsection
