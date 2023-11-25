@@ -33,8 +33,8 @@ class PostController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-      'titulo' => 'required|max:255',
-      'descripcion' => 'required|max:255',
+      'titulo' => 'max:255',
+      'descripcion' => 'max:255',
       'imagen' => 'required'
     ]);
 
@@ -46,5 +46,16 @@ class PostController extends Controller
     ]);
 
     return redirect()->route('posts.index', auth()->user()->username);
+  }
+
+  public function show(User $user, Post $post)
+  {
+
+    // dd($post);
+
+    return view('posts.show', [
+      'post' => $post,
+      'user' => $user
+    ]);
   }
 }

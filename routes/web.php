@@ -33,8 +33,9 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
-Route::get('/{user:username}/post/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('/{user:username}/post/create', [PostController::class, 'create'])->name('posts.create'); // {user:username} es el username del usuario
 
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show'); // {post} es el id del post
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
