@@ -48,9 +48,9 @@
       {{-- Para saber que un usuario no está autenticado --}}
       @guest  
         <nav class="flex gap-3 items-center">
-          <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('login')}}">Login</a>
+          <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('login')}}">iniciar sesión</a>
           {{-- Con el "route" traemos el nombre de la ruta nombrada --}}
-          <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('signup')}}">SignUp</a>
+          <a class="font-bold uppercase text-gray-500 text-lg hover:text-gray-900" href="{{route('signup')}}">Registrarse</a>
         </nav>
       @endguest
     </div>

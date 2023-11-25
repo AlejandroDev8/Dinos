@@ -21,7 +21,7 @@
           border-red-500
           @enderror" value="{{old('email')}}">
           @error('email')
-            <span class="text-red-500 text-xs">{{str_replace('email', 'correo electrónico', $message)}}</span>
+            <span class="text-red-500 text-sm">{{str_replace('email', 'correo electrónico', $message)}}</span>
           @enderror
         </div>
         <div class="mb-5">
@@ -30,7 +30,7 @@
           border-red-500
           @enderror">
           @error('password')
-            <span class="text-red-500 text-xs">{{str_replace('password', 'contraseña', $message)}}</span>
+            <span class="text-red-500 text-sm">{{str_replace('password', 'contraseña', $message)}}</span>
           @enderror
         </div>
         <div class="mb-5">
