@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="container mx-auto flex p-10">
+  <div class="container mx-auto md:flex p-10">
     <div class="md:w-1/2">
       <img src="{{asset('uploads' . '/' . $post->imagen)}}" alt="Imagen del post :{{$post->titulo}}">
       <div class="p-3">
@@ -23,7 +23,8 @@
         <p class="text-xl font-bold text-center mb-4">
           Agrega un comentario
         </p>
-        <form action="">
+        <form action="{{route('comentarios.store', ['user' => $user, 'post' => $post])}}" method="POST">
+          @csrf
           <div class="mb-6">
             <label
               for="comentario"
