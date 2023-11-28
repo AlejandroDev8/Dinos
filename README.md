@@ -1,4 +1,4 @@
-# Dino
+# Dinos
 
 Proyecto final para la materia **Desarrollo de Aplicaciones Web (DAW)**, el cual consiste en hacer una red social.
 En este caso se optó por tratar de hacer un clon de Instagram a nuestro estilo
