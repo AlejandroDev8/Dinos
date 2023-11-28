@@ -48,3 +48,4 @@ Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.sto
 
 // Likes a los posts
 Route::post('/post/{post}/likes', [LikeController::class, 'store'])->name('post.likes.store');
+Route::delete('/post/{post}/likes', [LikeController::class, 'destroy'])->name('post.likes.destroy');
