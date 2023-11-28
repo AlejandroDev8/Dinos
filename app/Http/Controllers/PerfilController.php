@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PerfilController extends Controller
 {
@@ -37,5 +38,42 @@ class PerfilController extends Controller
         'not_in:twitter,facebook,instagram,editar-perfil'
       ],
     ]);
+
+    if ($request->imagen) {
+      $imagen = $request->file('imagen');
+
+      // Generar un nombre único a la imagen
+
+      $nombreImagen = Str::uuid() . '.' . $imagen->extension();
+
+      // Crear una imagen
+
+      $imagenServidor = Image::make($imagen);
+
+      // Redimensionar la imagen
+
+      $imagenServidor->fit(1000, 1000, null, 'center');
+
+      // Almacenar la imagen en el servidor
+
+      $imagenPath = public_path('/perfiles' . '/' . $nombreImagen);
+
+      // Guardar la imagen en el servidor
+
+      $imagenServidor->save($imagenPath);
+    }
+
+    // Guardar cambios
+
+    $usuario = User::find(auth()->user()->id);
+
+    $usuario->username = $request->username;
+    $usuario->imagen = $nombreImagen ?? '';
+
+    $usuario->save();
+
+    // Redireccionar al usuario
+
+    return redirect()->route('posts.index', $usuario->username);
   }
 }
