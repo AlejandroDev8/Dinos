@@ -9,6 +9,10 @@
     <div class="md:w-1/2">
       <img src="{{asset('uploads' . '/' . $post->imagen)}}" alt="Imagen del post :{{$post->titulo}}">
       <div class="p-3 flex items-center gap-4">
+        @auth
+        @if ($post->checkLike(auth()->user()))
+          <p>Ya dió like</p>
+        @else
         <form action="{{route('post.likes.store', $post)}}" method="POST">
           @csrf
           <div class="my-4">
@@ -19,6 +23,8 @@
             </button>
           </div>
         </form>
+        @endif  
+        @endauth
         <p>0 Likes</p>
       </div>
       <div>
