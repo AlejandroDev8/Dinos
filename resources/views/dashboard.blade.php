@@ -36,6 +36,16 @@
             {{$user->posts->count()}}
             <span class="font-normal"> Publicaciones</span>
           </p>
+          @auth
+          @if ($user->id !== auth()->user()->id)  
+          <form action="{{route('users.follow', $user)}}" method="POST">
+            @csrf
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full">
+              Seguir
+            </button>
+          </form>
+          @endif
+          @endauth
         </div>
     </div>
   </div>
