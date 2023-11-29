@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
-use App\Http\Controllers\FollowerController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LikeController;
-use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('/signup', [RegisterController::class, 'index'])->name('signup');
 Route::post('/signup', [RegisterController::class, 'store']);
+
+Route::get('/search', [UserController::class, 'search'])->name('user.search');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
