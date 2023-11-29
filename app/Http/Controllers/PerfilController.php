@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class PerfilController extends Controller
 {
@@ -66,6 +67,12 @@ class PerfilController extends Controller
     // Guardar cambios
 
     $usuario = User::find(auth()->user()->id);
+
+    // Obtener la imagen anterior y eliminarla si existe
+    $imagenAnterior = $usuario->imagen;
+    if ($imagenAnterior && File::exists(public_path('perfiles') . '/' . $imagenAnterior)) {
+      File::delete(public_path('perfiles') . '/' . $imagenAnterior);
+    }
 
     $usuario->username = $request->username;
     $usuario->imagen = $nombreImagen ?? auth()->user()->imagen ?? null;
