@@ -20,6 +20,9 @@
       <nav class="flex gap-3 items-center">
         <div class="flex items-center gap-2">
           <form action="{{ route('user.search') }}" class="flex items-center gap-4">
+            @error('query')
+              <p class="text-red-500 my-2 rounded-lg text-sm p-2 text-center">{{str_replace('query', 'buscar', $message)}}</p>
+            @enderror
             <input type="text" name="query" placeholder="Buscar usuarios" class="p-2 rounded-xl border-slate-600">
             <button type="submit" class="cursor-pointer text-gray-500 text-lg hover:text-gray-900">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
